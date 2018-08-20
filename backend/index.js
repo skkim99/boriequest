@@ -19,10 +19,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('./build'))
 
-app.get('/test', (req, res) => {
-    res.send('test')
-})
-
 const routes = require('./routes')
 app.use('/api', routes)
 
