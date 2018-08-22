@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 const express = require('express');
 
@@ -17,6 +18,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(compression())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
+
 app.use(express.static('./build'))
 
 const routes = require('./routes')

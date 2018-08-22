@@ -13,4 +13,6 @@ const QuestionSchema = new Schema(
   }
 );
 
+QuestionSchema.index({ name: 1, language: 1}, {unique: true})
+
 module.exports = mongoose.model('Question', QuestionSchema);
